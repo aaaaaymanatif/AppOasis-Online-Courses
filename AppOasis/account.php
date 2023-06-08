@@ -658,7 +658,7 @@ $database = $config['database'];
                 $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->SMTPAuth = true;
                 $mail->Username = 'appoasis2023@outlook.com'; // Your Outlook email address
-                $mail->Password = '@Itsaymanatif128'; // Your Outlook email password
+                $mail->Password = ''; // Your Outlook email password
                 $mail->setFrom('appoasis2023@outlook.com', 'AppOasis');
                 $mail->addAddress($loginEmail, $row['name']);
                 $mail->Subject = 'Password Recovery';
