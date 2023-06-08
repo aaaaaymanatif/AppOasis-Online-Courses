@@ -1,0 +1,1132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Scroll Behaviour Style */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    background: #F5F5F5;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+/* All Elements Default Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Utilities */
+
+.popup-container{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.popup{
+    background-color: royalblue;
+    max-width: 300px;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: rgba(65, 105, 225, 0.384) 0px 30px 50px;
+    position: relative;
+    transition: all 0.5s;
+}
+
+.popup h1, .popup h2{
+    font-size: 2rem;
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.popup p{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #eee;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.popup button{
+    width: 100%;
+    background-color: white;
+    padding: 0;
+    height: 45px;
+    outline-color: white;
+}
+
+.popup button div{
+    color: royalblue;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+section header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+}
+
+section header div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+section header div img {
+    width: 40px;
+}
+
+section header h2 {
+    font-size: 3rem;
+    color: royalblue;
+}
+
+section header p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    line-height: 1.8;
+    color: #444;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 2.5px;
+}
+
+/* Components */
+
+/* Headings Styles */
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Wrapper Styles */
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+/* Layout Styles */
+.layout {
+    width: 100%;
+    background-color: white;
+    box-shadow: rgba(67, 80, 192, 0.2) 0px 40px 50px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.layout::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 150%;
+    height: 100%;
+    transform: translate(-50%, -50%) rotate(25deg);
+    background-color: #eee;
+    box-shadow: #666 0px 0px 100px;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Cover Styles */
+.cover {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+/* Header Styles */
+header {
+    user-select: none;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 40px;
+    color: royalblue;
+}
+
+.logo-container img {
+    width: 40px;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+header ul li {
+    float: left;
+}
+
+header ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 7px 15px;
+    color: #222;
+    cursor: pointer;
+}
+
+#my-account {
+    display: none;
+}
+
+#close-menu {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+}
+
+#log-in {
+    display: none;
+}
+
+header button {
+    margin-left: auto;
+}
+
+/* btn Class Styles */
+.btn {
+    align-self: flex-start;
+    padding: 8px 25px;
+    background-color: royalblue;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    outline: 2px solid royalblue;
+    outline-offset: 5px;
+}
+
+.btn div {
+    color: white;
+    font-size: 0.9rem;
+}
+
+#menu-btn {
+    display: none;
+    width: 30px;
+    margin-left: auto;
+}
+
+/* Course Page Styles */
+
+/* Main Styles */
+main {
+    width: 100%;
+}
+
+/* Title Section Styles */
+.title-section {
+    user-select: none;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.title-section h2 {
+    color: rgb(68, 65, 225);
+    text-align: center;
+    width: 90%;
+}
+
+.title-section p {
+    color: #555;
+    width: 70%;
+    text-align: center;
+}
+
+.navigation-section {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+/* Search Section Styles */
+.search-section {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1001;
+    visibility: hidden;
+}
+
+.content-form {
+    width: 800px;
+    height: 500px;
+    background-color: white;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 0px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.content-form-image {
+    width: 45%;
+    height: 100%;
+    position: relative;
+}
+
+.content-form-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#close-search-form,
+#close-categories-form {
+    width: 30px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.form-fieldset {
+    flex: 1;
+    height: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+}
+
+.form-fieldset legend,
+.form-fieldset h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form-fieldset p {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.form-fieldset input {
+    width: 100%;
+    height: 45px;
+    background-color: #eee;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.form-fieldset .btn {
+    width: 100%;
+    height: 45px;
+}
+
+.form-fieldset .btn div {
+    font-size: 1rem;
+}
+
+/* Filter Section Styles */
+.filter-section {
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 70%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 40px;
+    border-radius: 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#close-filter-section {
+    width: 30px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.filter-section ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-section ul li {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.filter-section ul li button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.filter-section ul li img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+/* General Categories Section Styles */
+.general-categories-section {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1001;
+    visibility: hidden;
+}
+
+.general-categories-section legend {
+    margin-bottom: 20px;
+}
+
+.navigation-section img.icon {
+    width: 35px;
+    cursor: pointer;
+}
+
+.navigation-section ul {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navigation-section ul li {
+    float: left;
+    padding: 10px;
+}
+
+.navigation-section ul li button {
+    text-decoration: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #111;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+/* Content Section Styles */
+.content-section {
+    width: 100%;
+    height: auto;
+    background-color: #eee;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.courses-grid {
+    width: 80%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+}
+
+.courses-grid li {
+    width: 100%;
+    background-color: #F5F5F5;
+    border-radius: 40px;
+    overflow: hidden;
+    outline: 1px solid #aaa;
+    outline-offset: 15px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 100px;
+    transition: all 0.5s;
+}
+
+.courses-grid li:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 40px 60px;
+}
+
+.image-cover {
+    width: 100%;
+    height: 250px;
+}
+
+.image-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-overview {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.course-overview h2 {
+    font-size: 1.5rem;
+}
+
+.course-overview p {
+    font-size: 1rem;
+    margin-top: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
+}
+
+.course-price strong{
+    font-size: 2rem;
+    color: royalblue;
+}
+
+.course-price sup{
+    font-size: 1.3rem;
+    color: royalblue;
+}
+
+/* Course Details Page Styles */
+
+/* Overview Section Styles */
+.overview {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: royalblue;
+    border-radius: 50px;
+}
+
+.overview-details {
+    max-width: 50%;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overview-details div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.overview-details h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.overview-details p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #eee;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.overview-details-price sup{
+    font-size: 1.3rem;
+    color: #eee;
+}
+
+.overview-details-price strong{
+    font-size: 2.5rem;
+    color: white;
+}
+
+.overview-details form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.overview-details form input {
+    width: 100%;
+    height: 50px;
+    background-color: #eee;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+}
+
+.overview-details form textarea {
+    width: 100%;
+    height: 110px;
+    border-radius: 20px;
+    background-color: #eee;
+    padding: 20px;
+    font-size: 1rem;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.overview-details form button {
+    margin-left: 5px;
+}
+
+#start-course {
+    padding: 15px 50px;
+    background-color: white;
+    border-radius: 30px;
+    outline-color: white;
+    outline-offset: 10px;
+}
+
+#start-course div {
+    font-size: 1.2rem;
+    color: royalblue;
+    font-weight: bold;
+}
+
+.overview-figure {
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+
+.overview-figure-container {
+    width: 70%;
+    height: 0;
+    padding-bottom: 70%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+    outline: 20px solid white;
+    outline-offset: 20px;
+}
+
+.overview-figure-container img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+
+/* Course Materials Styles */
+.course-materials {
+    width: 85%;
+    margin: 40px auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: royalblue;
+    outline: 2px solid royalblue;
+    outline-offset: 10px;
+    border-radius: 50px;
+}
+
+.course-materials-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    user-select: none;
+    gap: 40px;
+}
+
+.course-materials ul li {
+    height: 100%;
+}
+
+.course-materials ul li figure {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.course-materials ul li img {
+    width: 50px;
+}
+
+.course-video-introduction {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.course-video-introduction iframe {
+    height: 600px;
+    margin-top: 50px;
+}
+
+/* Text Container Styles */
+.text-container {
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.text-container-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.text-container-content p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Pricing Styles */
+.pricing {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: royalblue;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.pricing-grid {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.pricing-card-item {
+    width: 100%;
+    min-height: 300px;
+}
+
+.pricing-card-item h2 {
+    font-size: 2rem;
+}
+
+.pricing-card-item:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 1 / 3;
+    overflow: hidden;
+    padding-right: 40px;
+}
+
+.pricing-card-item:first-child h2 {
+    color: #fff;
+}
+
+.pricing-card-item p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.pricing-card-item:first-child p {
+    color: #eee;
+}
+
+.pricing-card {
+    height: 100%;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: white;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.price {
+    color: royalblue;
+}
+
+.coin {
+    font-size: 2rem;
+}
+
+.pricing-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.pricing-card ul {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.pricing-card .check-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.pricing-card .check-list img {
+    width: 24px;
+}
+
+.pricing-card button {
+    align-self: initial;
+    padding: initial;
+    width: 100%;
+    height: 45px;
+    margin-top: 20px;
+}
+
+.pricing-card button div {
+    font-size: 1rem;
+}
+
+/* Account(Login & Sign Up) Page Styles */
+
+/* Account Container Styles*/
+.account-container {
+    width: 100%;
+    height: 800px;
+    position: relative;
+    background-color: #eee;
+}
+
+.field-container {
+    width: 380px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 40px;
+    box-shadow: rgba(67, 80, 192, 0.2) 0px 40px 50px;
+    outline: 1px solid #999;
+    outline-offset: 15px;
+}
+
+.field-container form {
+    width: 100%;
+    height: 100%;
+    font-size: flex;
+    flex-direction: column;
+}
+
+.field-container form header {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.field-container form header div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.field-container form header p {
+    font-size: 0.95rem;
+    width: 100%;
+    margin: 0;
+    color: #444;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.field-container form header img {
+    width: 40px;
+}
+
+.field-container form header h2 {
+    font-size: 2.5rem;
+}
+
+.field-container form fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.field-container form fieldset input {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    font-size: 1rem;
+    height: 45px;
+    background-color: #eee;
+    border-radius: 20px;
+}
+
+.forgot-password {
+    width: 95%;
+    text-align: right;
+    color: royalblue;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+    margin-top: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.field-container form fieldset .btn {
+    align-self: initial;
+    width: 100%;
+    margin-top: 10px;
+    height: 45px;
+    padding: 0;
+}
+
+.field-container form fieldset button div {
+    font-size: 1rem;
+}
+
+/* Purchase Page Styles */
+.payment-form{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+    padding-top: 40px;
+}
+
+.payment-form .inner{
+    width: 600px;
+    padding: 50px;
+}
+
+.payment-form .inner table{
+    width: 100%;
+    margin-bottom: 40px;
+    border-collapse: collapse;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.payment-form .inner tr td{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #333;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Footer Styles */
+footer {
+    user-select: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: royalblue;
+}
+
+footer section p {
+    line-height: 1.7;
+    color: #444;
+    margin-left: 20px;
+}
+
+footer section {
+    padding: 30px;
+    overflow: hidden;
+}
+
+.footer-description {
+    flex-basis: 50%;
+    padding-right: 100px;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 50px;
+    background-color: royalblue;
+    margin-bottom: 20px;
+}
+
+.footer-description .vertical-line {
+    margin-left: 40px;
+}
+
+.footer-navigation {
+    flex-basis: 25%;
+}
+
+.footer-navigation h2 {
+    margin-bottom: 40px;
+}
+
+.footer-navigation ul li a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.footer-subscribe {
+    flex-basis: 25%;
+}
+
+.footer-subscribe input {
+    width: 90%;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: #eee;
+    padding-left: 20px;
+    border-radius: 25px;
+    padding-right: 20px;
+    font-size: 1rem;
+}
+
+.footer-subscribe .btn {
+    width: 90%;
+    margin-left: 20px;
+    padding: 0;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.footer-subscribe .btn div {
+    font-size: 1rem;
+}
